@@ -1,0 +1,71 @@
+#btnSubmit {
+    width: 314px !important;
+    background: #191a1a !important;
+    color: #b1361e;
+    cursor: pointer;
+    border: 0 !important;
+    padding: 0;
+}
+#btnSubmit:focus {
+    border: 0;
+}
+body {
+    background: #303133;
+    font-family: 'Open Sans', sans-serif;
+}
+.textWrapper {
+    width: 314px;
+    height: 34px;
+    line-height: 34px;
+    background: #C05C48;
+    color: #EFF5FF;
+    border-radius: 5px;
+    position: absolute;
+    left: 90px;
+}
+
+#msgMain {
+    top: 70px;
+}
+
+#msgWrong {
+    bottom: 50px;
+    display: none;
+}
+
+#main input {
+    display: block;
+    margin: 10px 0;
+    height: 25px;
+    width: 300px;
+    border: 1px solid grey;
+    padding: 0 6px;
+    background: #FAFFBD;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+}
+
+#main input:focus {
+    border: 1px solid blue;
+    border-radius: 7px;
+}
+
+#main {
+    width: 480px;
+    height: 400px;
+    background: #262729;
+    margin: 10% auto;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 18px;
+    text-align: center;
+}
+
+#wrap {
+    width: 300px;
+    height: 120px;
+    top: 140px;
+    left: 90px;
+    position: absolute;
+}

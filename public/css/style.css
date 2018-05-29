@@ -1,0 +1,98 @@
+body {
+	background: #303133;
+	font-family: 'Open Sans', sans-serif;
+	color: #ccc;
+	margin: 0;
+}
+
+.main {
+	width: 800px;
+	margin: auto;
+	height: 90%;
+}
+
+#header {
+	height: 30px;
+	background: #262729;
+	text-align: center;
+	font-size: 36px;
+	border-radius: 3px 3px 0 0;
+}
+
+#section {
+	height: 90%;
+	display: flex;
+}
+
+#right {
+	height: 100%;
+	width: 100%;
+}
+
+#chatWindow {
+	height: 100%;
+	background: white;
+	/* border: 1px solid black; */
+	background: #262729;
+	padding: 5px;
+	color: #bbb;
+	/*border-bottom: none*/
+	overflow: auto;
+}
+#chatWindow::-webkit-scrollbar {
+	width: 0;
+}
+
+#messageWindow {
+	height: 10%;
+	background: #C05C48;
+	border-top: none;
+	border-radius: 0 0 20px 20px;
+	overflow: hidden;
+}
+
+#msgForm {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background: #C05C48;
+	border: none;
+	outline: none;
+	resize: none;
+	color: #EFF5FF;
+	padding: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	overflow: hidden;
+	padding: 13px;
+}
+
+#msgForm::-webkit-input-placeholder {
+	color: #EFF5FF;
+}
+
+.msgContainer {
+	position: relative;
+	height: 45px;
+}
+.msg {
+	border-radius: 6px;
+	padding: 8px;
+	/* height: 25px; */
+}
+.getMsg {
+	position: absolute;
+	background-color: rgb(74, 96, 223);
+	max-width: 350px;
+	left: 10px;
+}
+.sentMsg {
+	background-color: rgb(12, 25, 99);
+	position: absolute;
+	right: 15px;
+	max-width: 345px;
+}
+
+#messages {
+	overflow: hidden;
+}
