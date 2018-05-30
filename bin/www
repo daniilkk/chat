@@ -3,7 +3,7 @@ let app = require('../app');
 let debug = require('debug')('messenger:server');
 let http = require('http');
 
-let port = config.get('port');
+let port = process.env.PORT || config.get('port');
 app.set('port', port);
 
 let server = http.Server(app);
