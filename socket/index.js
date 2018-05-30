@@ -58,7 +58,7 @@ io.use(function(socket, next) {
         }
     ], function (err, user) {
         if (err) {
-            if (err instanceof HttpError) 
+            if (err instanceof Error) 
                 return next(new Error('not authorized'));
             next(err);
         }
