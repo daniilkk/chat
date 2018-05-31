@@ -1,24 +1,25 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var config = require('./config');
-var mongoose = require('./lib/mongoose');
-var async = require('async');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let config = require('./config');
+let mongoose = require('./lib/mongoose');
+let async = require('async');
+let favicon = require('serve-favicon');
 
 
 let User = require('./models/user').User;
 let AuthError = require('./models/user').AuthError;
-//var logger = require('morgan');
+//let logger = require('morgan');
 
-var session = require('express-session');
-var sessionStore = require('./lib/sessionStore')
+let session = require('express-session');
+let sessionStore = require('./lib/sessionStore')
 
-var app = express();
+let app = express();
 
-var routes = ['/', '/login', 'favicon.ico'];
+let routes = ['/', '/login', 'favicon.ico'];
 
-
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -66,7 +67,6 @@ app.post('/login', function(req, res, next) {
 	let password = req.body.password;
 
 	User.authorize(username, password, function(err, user) {
-		console.log('user authorized');
 		if (err) {
 			if (err instanceof AuthError) {
 				res.status(403).end();
@@ -78,32 +78,6 @@ app.post('/login', function(req, res, next) {
 			res.send({});
 		}
 	});
-
-	/*async.waterfall([
-		callback => {
-			User.findOne({username: username}, callback);	
-		},
-		(user, callback) => {
-			if (user) {
-				if (user.checkPassword(password)){
-					callback(null, user);
-				}
-			 	else {
-			 		res.status(403).end();
-			 	}
-			} else {
-				var user = new User({username: username, password: password});
-				user.save(function(err) {
-					if (err) return next(err);
-					callback(null, user);
-				});
-			}
-		}
-	], (err, user) => {
-		if (err) return next(err);
-		req.session.user = user._id;
-		res.send({});
-	});*/
 });
 
 app.post('/logout', function(req, res) {

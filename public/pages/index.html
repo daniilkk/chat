@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Lorem ipsum.</title>
+	<title>Messenger</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 	<link rel="stylesheet" href="/css/style.css">
@@ -11,62 +11,36 @@
 	<script src="/js/index.js"></script>
 </head>
 <body>
-	<div class="main">
+	
+	<div id="main">
+			<div id="onlineBtn">Online</div>
+			<div id="onlineWrap">
+				<div id="onlineBlock">
+					<ul id = "onlineUsers">
+						<li>mixst99</li>
+						<li>daniilkk</li>
+						
+					</ul>
+				</div>
+			</div>
 		<div id="header">
-			<p id="headerText">
 				
-			</p>
 		</div>
 		<div id="section">
 			<div id="right">
 				<div id="chatWindow">
 					<div id="messages">
-						<div class="msgContainer">
-							<div class = "msg getMsg"> 
-								<span>	Путин хуйло </span>
-							</div>
-						</div>
-						<div class="msgContainer">
-							<div class = "msg sentMsg"> гдеееееееее это мы</div>
-						</div>
-						<div class="msgContainer">
-							<div class = "msg sentMsg"> гдееее это мы фывфы вфы в фыв фы в</div>
-						</div>
 					</div>
 				</div>
 				<div id="messageWindow">
-					<textarea maxlength="140" placeholder="Write a message..." id="msgForm" spellcheck="false"></textarea>
+					<textarea maxlength="250" placeholder="Write a message..." id="msgForm" spellcheck="false"></textarea>
 					<!-- <input type="submit" id="submitButton"> -->
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<!-- <script>
-		var messages = document.querySelector('#messages');
-		var chat = document.querySelector('#chatWindow');
-		document.querySelector('#msgForm').onkeydown = function(e) {
-			if (e.keyCode == 13) {
-				if (e.shiftKey) return;
-				if (e.target.value == '') return false;
-				var msg = document.createElement('div'), 
-					div = msg.cloneNode(false),
-					span = document.createElement('span');
-				msg.className = 'msgContainer';
-				div.className = 'msg getMsg';
-				msg.append(div);
-				div.append(span);
-				span.textContent = e.target.value;
-				var style = getComputedStyle(div),
-					chatS = getComputedStyle(chat)		
-				e.target.value = '';
-				messages.append(msg);
-				msg.style.height = parseInt(getComputedStyle(div).height) + 22 + 'px';
-				chat.scrollTo(0,parseInt(chatS.height))
-				return false;
-			};
-			
-		}
-	</script> -->
+	<div id="logout">
+		Log out
+	</div>
 </body>
 </html>
