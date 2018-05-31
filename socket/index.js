@@ -90,7 +90,7 @@ io.on('connection', function(socket) {
     });
 
     socket.on('message', function(msgObj, cb) {
-        let dateString = (new Date).toString();
+        let dateString = (new Date(Date.now() + 3 * 60 * 60 * 1000)).toString();
         let time = dateString.split(' ')[4].slice(0, -3);
 
         msgObj.author = user.username;
